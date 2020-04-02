@@ -8,7 +8,7 @@ namespace MarsRover
         private static void Main(string[] args)
         {
             var maxPoints = Console.ReadLine().Trim().Split(' ').Select(int.Parse).ToList();
-            var startPositions = Console.ReadLine().Trim().Split(' ');
+            var startPositions = Console.ReadLine().Trim().ToUpper().Split(' ');
             Position position = new Position();
 
             if (startPositions.Count() == 3)

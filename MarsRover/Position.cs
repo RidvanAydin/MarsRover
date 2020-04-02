@@ -14,27 +14,27 @@ namespace MarsRover
         {
             LocationX = 0;
             LocationY = 0;
-            Direction = Directions.North;
+            Direction = Directions.N;
         }
 
         private void TurnLeft()
         {
             switch (this.Direction)
             {
-                case Directions.North:
-                    this.Direction = Directions.West;
+                case Directions.N:
+                    this.Direction = Directions.W;
                     break;
 
-                case Directions.South:
-                    this.Direction = Directions.East;
+                case Directions.S:
+                    this.Direction = Directions.E;
                     break;
 
-                case Directions.East:
-                    this.Direction = Directions.North;
+                case Directions.E:
+                    this.Direction = Directions.N;
                     break;
 
-                case Directions.West:
-                    this.Direction = Directions.South;
+                case Directions.W:
+                    this.Direction = Directions.S;
                     break;
 
                 default:
@@ -46,20 +46,20 @@ namespace MarsRover
         {
             switch (this.Direction)
             {
-                case Directions.North:
-                    this.Direction = Directions.East;
+                case Directions.N:
+                    this.Direction = Directions.E;
                     break;
 
-                case Directions.South:
-                    this.Direction = Directions.West;
+                case Directions.S:
+                    this.Direction = Directions.W;
                     break;
 
-                case Directions.East:
-                    this.Direction = Directions.South;
+                case Directions.E:
+                    this.Direction = Directions.S;
                     break;
 
-                case Directions.West:
-                    this.Direction = Directions.North;
+                case Directions.W:
+                    this.Direction = Directions.N;
                     break;
 
                 default:
@@ -71,19 +71,19 @@ namespace MarsRover
         {
             switch (this.Direction)
             {
-                case Directions.North:
+                case Directions.N:
                     this.LocationY += 1;
                     break;
 
-                case Directions.South:
+                case Directions.S:
                     this.LocationY -= 1;
                     break;
 
-                case Directions.East:
+                case Directions.E:
                     this.LocationX += 1;
                     break;
 
-                case Directions.West:
+                case Directions.W:
                     this.LocationX -= 1;
                     break;
 
@@ -114,20 +114,15 @@ namespace MarsRover
                         Console.WriteLine($"Invalid Character {move}");
                         break;
                 }
-
-                if (this.LocationX < 0 || this.LocationX > maxPoints[0] || this.LocationY < 0 || this.LocationY > maxPoints[1])
-                {
-                    throw new Exception($"Oops! Position can not be beyond bounderies (0 , 0) and ({maxPoints[0]} , {maxPoints[1]})");
-                }
             }
         }
     }
 
     public enum Directions
     {
-        North = 1,
-        South = 2,
-        East = 3,
-        West = 4
+        N = 1,
+        S = 2,
+        E = 3,
+        W = 4
     }
 }
